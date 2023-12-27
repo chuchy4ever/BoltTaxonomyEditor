@@ -12,9 +12,6 @@
         "categories",
         "tags"
     ],
-    "require": {
-        "bolt/bolt": "^5.0"
-    },
     "require-dev": {
         "phpunit/phpunit": "^4.7"
     },
