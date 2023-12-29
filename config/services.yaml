@@ -1,4 +1,4 @@
 services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
+    Chuchy4ever\TaxonomyEditor\BackendMenu:
+        arguments: ['@router', '@translator']
+        tags: [ 'bolt.extension_backend_menu' ]
