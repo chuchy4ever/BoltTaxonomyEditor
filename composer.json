@@ -1,43 +1,42 @@
 {
-    "name": "chuchy4ever/bolttaxonomyeditor",
-    "description": "An extension to add a GUI to edit taxonomies.",
-    "type": "bolt-extension",
-    "keywords": [
-        "taxonomy",
-        "gui",
-        "taxonomy editor",
-        "taxonomy visual editor",
-        "editor",
-        "category",
-        "categories",
-        "tags"
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^4.7"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Graham May",
-            "email": "graham.may@soapbox.co.uk"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Bolt\\Extension\\Soapbox\\TaxonomyEditor\\": "src",
-            "Bolt\\Extension\\Soapbox\\TaxonomyEditor\\Exceptions\\": "exceptions"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Bolt\\Extension\\Soapbox\\TaxonomyEditor\\Tests\\": "tests",
-            "Bolt\\Tests\\": "vendor/bolt/bolt/tests/phpunit/unit/"
-        }
-    },
-    "extra": {
-        "bolt-assets": "web",
-        "bolt-class": "Bolt\\Extension\\Soapbox\\TaxonomyEditor\\TaxonomyEditorExtension"
+  "name": "chuchy4ever/taxonomy-editor",
+  "description": "An extension to add a GUI to edit taxonomies.",
+  "type": "bolt-extension",
+  "keywords": [
+    "taxonomy",
+    "gui",
+    "taxonomy editor",
+    "taxonomy visual editor",
+    "editor",
+    "category",
+    "categories",
+    "tags"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jan Chuchvalec",
+      "email": "chuchy4ever@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "bolt/core": "^5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chuchy4ever\\TaxonomyEditor\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "entrypoint": "Chuchy4ever\\TaxonomyEditor\\Extension"
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": false,
+      "drupol/composer-packages": false
+    }
+  }
 }
