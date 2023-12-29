@@ -2,3 +2,7 @@ services:
     Chuchy4ever\TaxonomyEditor\BackendMenu:
         arguments: ['@router', '@translator']
         tags: [ 'bolt.extension_backend_menu' ]
+
+framework:
+    translator:
+        paths: ['%kernel.project_dir%/vendor/chuchy4ever/taxonomy-editor/translations']
