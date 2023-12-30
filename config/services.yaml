@@ -1,4 +1,7 @@
 services:
+    Chuchy4ever\TaxonomyEditor\Controller\TaxonomyEditorController:
+        tags: ['controller.service_arguments']
+
     Chuchy4ever\TaxonomyEditor\BackendMenu:
         arguments: ['@router', '@translator']
         tags: [ 'bolt.extension_backend_menu' ]
