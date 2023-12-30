@@ -6,6 +6,7 @@ namespace Chuchy4ever\TaxonomyEditor\Controller;
 
 use Bolt\Controller\Backend\BackendZoneInterface;
 use Bolt\Controller\TwigAwareController;
+use Chuchy4ever\TaxonomyEditor\Service\TaxonomyEditorService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,14 +15,24 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 final class TaxonomyEditorController extends TwigAwareController implements BackendZoneInterface
 {
-	/**
-	 * @Route("", name="taxonomy_editor_list", methods={"GET"})
+
+    private TaxonomyEditorService $taxonomyEditorService;
+
+    public function __construct(TaxonomyEditorService $taxonomyEditorService)
+    {
+        $this->taxonomyEditorService = $taxonomyEditorService;
+    }
+
+    /**
+	 * @Route("", name="taxonomy_editor_index", methods={"GET"})
 	 */
-	public function list(): Response
+	public function index(): Response
 	{
-		return $this->render('taxonomy_editor_list.html.twig', [
-		 'title' => 'User content'
+        $config = $this->config;
+
+		return $this->render('@taxonomy-editor/index.html.twig', [
+             'taxonomy_config' => $config,
+             'taxonomies' => $this->taxonomyEditorService->getTaxonomies($config),
 		]);
 	}
-
 }

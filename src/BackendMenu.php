@@ -35,7 +35,7 @@ final class BackendMenu implements ExtensionBackendMenuInterface
             ],
         ]);
         $menu->addChild('Taxonomies', [
-            'uri' => $this->urlGenerator->generate('taxonomy_editor_list'),
+            'uri' => $this->urlGenerator->generate('taxonomy_editor_index'),
             'extras' => [
                 'icon' => 'fa-folder-open',
             ],

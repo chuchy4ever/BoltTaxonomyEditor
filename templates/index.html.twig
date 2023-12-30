@@ -1,0 +1,32 @@
+{% extends '@bolt/_base/layout.html.twig' %}
+{% import '@taxonomy-editor/taxonomy-item.html.twig' as item %}
+
+{% block title %}
+    This is the title of the page
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-md-8 taxonomies js-taxonomies">
+        <ul class="nav nav-tabs" role="tablist">
+            {% for taxonomy in taxonomies %}
+                <li role="presentation" class="{{ loop.first ? 'active' }}">
+                    <a href="#{{ taxonomy.slug }}" aria-controls="{{ taxonomy.slug }}" role="tab" data-toggle="tab">{{ taxonomy.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="tab-content">
+            {% for taxonomy in taxonomies %}
+                <div role="tabpanel" class="tab-pane {{ loop.first ? 'active' }}" id="{{ taxonomy.slug }}">
+                    <ol class="sortable">
+                        {% for term_slug, term_name in taxonomy.options %}
+                            {{ item.taxonomyItem(term_slug, term_name, loop.index, taxonomy_config, taxonomy.slug) }}
+                        {% endfor %}
+                    </ol>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
