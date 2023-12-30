@@ -6,9 +6,23 @@ namespace Chuchy4ever\TaxonomyEditor\Service;
 
 use Bolt\Collection\DeepCollection;
 use Bolt\Configuration\Config;
+use Bolt\Extension\ExtensionRegistry;
+use Chuchy4ever\TaxonomyEditor\Extension;
 
 final class TaxonomyEditorService
 {
+
+    private ExtensionRegistry $extensionRegistry;
+
+    public function __construct(ExtensionRegistry $extensionRegistry)
+    {
+        $this->extensionRegistry = $extensionRegistry;
+    }
+
+    public function getExtensionConfig(): array
+    {
+        return $this->extensionRegistry->getExtension(Extension::class)->getConfig()->toArray();
+    }
 
     public function getTaxonomies(Config $config): array
     {
