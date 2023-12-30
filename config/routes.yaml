@@ -1,4 +1,4 @@
 app_panel:
-    resource: '../src/TaxonomyEditorController.php'
+    resource: '../src/Controller/TaxonomyEditorController.php'
     prefix: '%bolt.backend_url%'
     type: annotation
