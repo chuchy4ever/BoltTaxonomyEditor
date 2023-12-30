@@ -34,14 +34,10 @@ final class BackendMenu implements ExtensionBackendMenuInterface
                 'icon' => 'fa-wrench',
             ],
         ]);
-        $menu->addChild('File Management2', [
-            'uri' => $this->urlGenerator->generate('bolt_menupage', [
-                'slug' => 'filemanagement',
-            ]),
+        $menu->addChild('Taxonomies', [
+            'uri' => $this->urlGenerator->generate('taxonomy_editor_list'),
             'extras' => [
-                'name' => $this->translator->trans('caption.file_management'),
                 'icon' => 'fa-folder-open',
-                'slug' => 'filemanagement2',
             ],
         ]);
 	}

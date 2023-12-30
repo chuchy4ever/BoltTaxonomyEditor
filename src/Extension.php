@@ -12,4 +12,9 @@ final class Extension extends BaseExtension
 	{
 		return 'Taxonomy editor';
 	}
+
+    public function initialize(): void
+    {
+        $this->addTwigNamespace('taxonomy-editor');
+    }
 }
