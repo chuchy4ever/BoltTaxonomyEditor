@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class TaxonomyEditorController extends TwigAwareController implements BackendZoneInterface
 {
 	/**
-	 * @Route(name="taxonomy_editor_list", methods={'GET'})
+	 * @Route("", name="taxonomy_editor_list", methods={"GET"})
 	 */
 	public function list(): Response
 	{
